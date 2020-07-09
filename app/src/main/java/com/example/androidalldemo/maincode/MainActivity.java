@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     public ListView listView;
-    public List<String> list =new ArrayList<>();
+    public List<MainBase> list =new ArrayList<>();
     public List<String> listUrl =new ArrayList<>();
 
     @Override
@@ -26,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         listView=(ListView)findViewById(R.id.main_list);
 
-        list.add("相机");
-
+            MainBase mainBase =new MainBase();
+            mainBase.DemoName= "相机";
+            list.add(mainBase);
 
         MainAdapter mainAdapter = new MainAdapter(this,list);
         listView.setAdapter(mainAdapter);
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 }

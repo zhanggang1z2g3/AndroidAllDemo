@@ -17,9 +17,9 @@ import java.util.List;
 public class MainAdapter extends BaseAdapter {
 
     private Context context;
-    private List<String> list;
+    private List<MainBase> list;
 
-    public MainAdapter(Context context,List<String> list){
+    public MainAdapter(Context context,List<MainBase> list){
            this.context=context;
            this.list=list;
     }
@@ -50,7 +50,7 @@ public class MainAdapter extends BaseAdapter {
          }else{
               holder=(ViewHolder) view.getTag();
          }
-        holder.textView.setText(list.get(i));
+        holder.textView.setText(list.get(i).DemoName);
 
         return view;
     }
